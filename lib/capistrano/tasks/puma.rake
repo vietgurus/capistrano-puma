@@ -91,9 +91,9 @@ namespace :puma do
 
   task :smart_restart do
     if !git_plugin.puma_preload_app? && git_plugin.puma_workers.to_i > 1
-      invoke 'puma:phased-restart'
+      invoke!('puma:phased-restart')
     else
-      invoke 'puma:restart'
+      invoke!('puma:restart')
     end
   end
 
